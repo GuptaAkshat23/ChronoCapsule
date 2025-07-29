@@ -1,5 +1,3 @@
-// src/components/CreateCapsule.jsx
-
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom'; // Import Link
 import { auth, db } from '../firebase';
@@ -14,7 +12,6 @@ import {
   getDocs,
 } from 'firebase/firestore';
 
-// You can keep the Cloudinary configuration if you are using it for file uploads.
 const CLOUDINARY_CLOUD_NAME = "dbijv7rqo";
 const CLOUDINARY_UPLOAD_PRESET = "chrono_capsule_uploads";
 const CLOUDINARY_UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`;
@@ -40,12 +37,10 @@ function CreateCapsule() {
     setStatusMessage('Sealing your capsule...');
 
     try {
-      // --- Fetch Creator's Username ---
       const creatorDocRef = doc(db, "users", currentUser.uid);
       const creatorDocSnap = await getDoc(creatorDocRef);
       const creatorUsername = creatorDocSnap.exists() ? creatorDocSnap.data().username : currentUser.email;
 
-      // --- Fetch Collaborators' Usernames from their emails ---
       const collaboratorEmails = collaborators.split(',').map(email => email.trim()).filter(email => email);
       const collaboratorsData = [];
 
@@ -64,7 +59,6 @@ function CreateCapsule() {
       }
       
       let mediaUrls = [];
-      // --- Media Upload Logic ---
       if (files.length > 0) {
         setStatusMessage('Uploading memories...');
         const uploadPromises = [...files].map(file => {
@@ -81,7 +75,6 @@ function CreateCapsule() {
       }
       
 
-      // --- Save to Firestore ---
       setStatusMessage('Placing capsule in the vault...');
       const capsuleCollectionRef = collection(db, 'capsules');
       await addDoc(capsuleCollectionRef, {
@@ -93,8 +86,8 @@ function CreateCapsule() {
         openDate: Timestamp.fromDate(new Date(openDate)),
         mediaUrls: mediaUrls,
         createdAt: Timestamp.now(),
-        collaboratorEmails: collaboratorEmails, // Storing emails for querying
-        collaborators: collaboratorsData, // Storing rich data for display
+        collaboratorEmails: collaboratorEmails,
+        collaborators: collaboratorsData,
       });
 
       setStatusMessage('Capsule sealed successfully!');

@@ -1,7 +1,6 @@
-// src/components/Welcome.jsx
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/logo.png'; // 1. Import the logo
+import logo from '../assets/logo.png'; 
 
 function Welcome() {
   const navigate = useNavigate();
@@ -16,7 +15,7 @@ function Welcome() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 animate-fadeIn">
       
-      {/* 2. Add the logo image here */}
+      {}
       <img src={logo} alt="ChronoCapsule Logo" className="w-24 h-24 mb-4" />
 
       <h1 className="text-5xl font-bold">ChronoCapsule</h1>

@@ -1,11 +1,8 @@
-// src/components/CapsuleView.jsx
-
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { auth, db } from '../firebase';
 import { doc, getDoc } from 'firebase/firestore';
 
-// --- Helper function to determine media type from URL ---
 const getMediaType = (url) => {
     const extension = url.split('.').pop().split('?')[0].toLowerCase();
     if (['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg'].includes(extension)) {
@@ -27,7 +24,6 @@ function CapsuleView() {
   const [isLoading, setIsLoading] = useState(true);
   const currentUser = auth.currentUser;
 
-  // --- State for the media modal ---
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedMedia, setSelectedMedia] = useState(null);
 
@@ -41,7 +37,6 @@ function CapsuleView() {
     setSelectedMedia(null);
   };
 
-  // --- Effect to handle 'Escape' key press for closing modal ---
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === 'Escape') {
@@ -121,7 +116,7 @@ function CapsuleView() {
         </Link>
       </div>
       
-      {/* --- Header Section --- */}
+      {}
       <div className="bg-white shadow-lg rounded-xl p-8 mb-8">
         <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight mb-2">{capsule.title}</h1>
         <p className="text-md text-gray-500">
@@ -129,10 +124,10 @@ function CapsuleView() {
         </p>
       </div>
 
-      {/* --- Message & Collaborators Section --- */}
+      {}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
-            {/* --- Message Section --- */}
+            {}
             <h2 className="text-2xl font-bold text-gray-800 mb-4">A Message From The Past</h2>
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
                 <p className="text-lg text-gray-700 leading-relaxed whitespace-pre-wrap">
@@ -141,7 +136,7 @@ function CapsuleView() {
             </div>
         </div>
         
-        {/* --- Collaborators Section --- */}
+        {}
         {capsule.collaborators && capsule.collaborators.length > 0 && (
             <div className="bg-gray-50 p-6 rounded-lg">
               <h3 className="text-xl font-semibold text-gray-800 mb-4">Shared With</h3>
@@ -157,7 +152,7 @@ function CapsuleView() {
       </div>
 
 
-      {/* --- Media Section --- */}
+      {}
       {capsule.mediaUrls && capsule.mediaUrls.length > 0 && (
         <div className="mt-12">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">Saved Memories</h2>
@@ -180,7 +175,7 @@ function CapsuleView() {
       )}
     </div>
 
-    {/* --- Media Modal --- */}
+    {}
     {isModalOpen && (
         <div 
             className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4 animate-fadeIn"
@@ -194,7 +189,7 @@ function CapsuleView() {
             </button>
             <div 
                 className="bg-white p-2 rounded-lg max-w-4xl max-h-[90vh] w-full"
-                onClick={(e) => e.stopPropagation()} // Prevent closing modal when clicking inside content
+                onClick={(e) => e.stopPropagation()}
             >
                 {selectedMedia.type === 'image' && (
                     <img src={selectedMedia.url} alt="Enlarged view" className="w-full h-full object-contain max-h-[85vh]" />

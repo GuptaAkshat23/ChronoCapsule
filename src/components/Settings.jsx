@@ -1,4 +1,3 @@
-// src/components/Settings.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth, db } from '../firebase';
@@ -9,7 +8,6 @@ function Settings() {
   const navigate = useNavigate();
   const user = auth.currentUser;
 
-  // --- State for the Change Password form ---
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -41,13 +39,10 @@ function Settings() {
     setIsLoading(true);
 
     try {
-      // 1. Create a credential from the user's old password
       const credential = EmailAuthProvider.credential(user.email, oldPassword);
       
-      // 2. Re-authenticate the user with the credential
       await reauthenticateWithCredential(user, credential);
       
-      // 3. If re-authentication is successful, update the password
       await updatePassword(user, newPassword);
 
       setSuccess("Password updated successfully!");
@@ -91,7 +86,7 @@ function Settings() {
     <div className="max-w-2xl mx-auto p-4 sm:p-6 space-y-8">
       <h2 className="text-3xl font-bold text-gray-800 text-center">Account Settings</h2>
       
-      {/* --- Change Password Card --- */}
+      {}
       <div className="bg-white p-8 rounded-lg shadow-md">
         <h3 className="text-xl font-bold text-gray-800 mb-6">Change Password</h3>
 
@@ -140,7 +135,7 @@ function Settings() {
         </form>
       </div>
 
-      {/* --- Delete Account Card --- */}
+      {}
       <div className="bg-white border-2 border-red-500 p-8 rounded-lg shadow-md">
         <h3 className="text-xl font-bold text-red-600 mb-2">Delete Account</h3>
         <p className="text-gray-600 mb-4">Warning: This action is permanent. It will delete your profile and all of your capsules. This cannot be undone.</p>

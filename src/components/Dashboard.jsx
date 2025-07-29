@@ -1,4 +1,3 @@
-// src/components/Dashboard.jsx
 import React, { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { db } from '../firebase';
@@ -8,9 +7,8 @@ function Dashboard({ user }) {
   const [ownedCapsules, setOwnedCapsules] = useState([]);
   const [sharedCapsules, setSharedCapsules] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [username, setUsername] = useState(''); // State to hold the user's username
+  const [username, setUsername] = useState('');
 
-  // --- Fetch the user's username from Firestore ---
   useEffect(() => {
     if (user) {
       const fetchUsername = async () => {
@@ -19,7 +17,6 @@ function Dashboard({ user }) {
         if (userDocSnap.exists()) {
           setUsername(userDocSnap.data().username);
         } else {
-          // Fallback to email if the username document doesn't exist
           setUsername(user.email);
         }
       };
@@ -27,7 +24,6 @@ function Dashboard({ user }) {
     }
   }, [user]);
 
-  // --- Fetch the user's capsules ---
   useEffect(() => {
     if (!user || !user.uid) {
       setIsLoading(false);
@@ -80,7 +76,7 @@ function Dashboard({ user }) {
         }
       `}</style>
       
-      {/* --- Welcome Message Section --- */}
+      {}
       <div className="mb-8 p-6 bg-white rounded-lg shadow">
         <h1 className="text-3xl font-bold text-gray-800">
           Welcome, <span className="text-blue-600">{username || '...'}</span>!
