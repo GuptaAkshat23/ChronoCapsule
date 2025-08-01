@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+#ChronoCapsule
+This project was bootstrapped with Create React App and customized to build a full-stack digital time capsule application.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##About This Project
+ChronoCapsule is a web application that allows users to create and share digital time capsules. Users can write messages, attach media files, and set a future date for the capsule to be unlocked. It's built to preserve memories and share them with others across time.
 
-## Available Scripts
+Live Demo URL: [https://chronocapsule-app.vercel.app/](https://chrono-capsule.vercel.app/)
 
-In the project directory, you can run:
+##Key Features
+  User Authentication: Secure sign-up and login functionality.
 
-### `npm start`
+  Capsule Creation: Create capsules with a title, message, media, and an unlock date.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  Collaboration: Share capsules with friends via email.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  Personalized Dashboard: View and manage all your created and shared capsules.
 
-### `npm test`
+##Tech Stack
+  Frontend: React, React Router
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  Styling: Tailwind CSS
 
-### `npm run build`
+  Backend Services: Firebase (Authentication, Firestore Database)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  Media Storage: Cloudinary
+  
+  Deployment: Vercel
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##Setup and Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  To get a local copy up and running, follow these steps.
 
-### `npm run eject`
+  git clone
+  First, clone the repository from GitHub to your local machine:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  git clone https://github.com/GuptaAkshat23/ChronoCapsule.git
+  cd ChronoCapsule
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Next, install the necessary project dependencies:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+ npm install
 
-## Learn More
+##Set up Environment Variables
+  Before running the app, you must provide your own API keys.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  Create a file named .env.local in the root of your project.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  Add your Firebase and Cloudinary configuration details to this file.
 
-### Code Splitting
+  REACT_APP_FIREBASE_API_KEY="YOUR_API_KEY"
+  REACT_APP_FIREBASE_AUTH_DOMAIN="YOUR_AUTH_DOMAIN"
+  REACT_APP_FIREBASE_PROJECT_ID="YOUR_PROJECT_ID"
+  REACT_APP_FIREBASE_STORAGE_BUCKET="YOUR_STORAGE_BUCKET"
+  REACT_APP_FIREBASE_MESSAGING_SENDER_ID="YOUR_SENDER_ID"
+  REACT_APP_FIREBASE_APP_ID="YOUR_APP_ID"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+##Available Scripts
+  In the project directory, you can run:
 
-### Analyzing the Bundle Size
+  npm start
+  Runs the app in the development mode.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  Open http://localhost:3000 to view it in your browser.
+  
+  The page will reload when you make changes.
 
-### Making a Progressive Web App
+  You may also see any lint errors in the console.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  npm test
+  
+  Launches the test runner in the interactive watch mode.
 
-### Advanced Configuration
+  See the section about running tests for more information.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  npm run build
+  Builds the app for production to the build folder.
 
-### Deployment
+  It correctly bundles React in production mode and optimizes the build for the best performance.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+  The build is minified and the filenames include the hashes.
+  
+  Your app is ready to be deployed!
+  
+  See the section about deployment for more information.
 
-### `npm run build` fails to minify
+##Deployment
+  This application is configured for seamless deployment on Vercel.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  The deployment process is automated through a CI/CD pipeline linked to the main branch of the GitHub repository. Any push to the main branch will automatically trigger a new build and deployment.
+
+  For manual deployment, you can run npm run build and upload the contents of the build folder to any static site hosting service.
+
+Learn More
+You can learn more in the Create React App documentation.
+
+To learn React, check out the React documentation.
