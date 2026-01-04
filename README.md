@@ -1,98 +1,87 @@
-#ChronoCapsule
-This project was bootstrapped with Create React App and customized to build a full-stack digital time capsule application.
+# ⏳ ChronoCapsule
 
-##About This Project
-ChronoCapsule is a web application that allows users to create and share digital time capsules. Users can write messages, attach media files, and set a future date for the capsule to be unlocked. It's built to preserve memories and share them with others across time.
+**Preserve Moments, Unlock Futures, Share Timeless Memories**
 
-Live Demo URL: [https://chronocapsule-app.vercel.app/](https://chrono-capsule.vercel.app/)
+ChronoCapsule is a full-stack React application that allows users to create, share, and unlock digital time capsules filled with messages and multimedia content. Designed to preserve memories and enable future sharing, it leverages modern web technologies to deliver a secure, scalable, and user-friendly experience.
 
-##Key Features
-  User Authentication: Secure sign-up and login functionality.
+---
 
-  Capsule Creation: Create capsules with a title, message, media, and an unlock date.
+## 🛠 Built With
 
-  Collaboration: Share capsules with friends via email.
+- **Frontend:** React, JavaScript, Tailwind CSS  
+- **Backend & Auth:** Firebase  
+- **Media Storage:** Cloudinary  
+- **Package Manager:** npm  
 
-  Personalized Dashboard: View and manage all your created and shared capsules.
+---
 
-##Tech Stack
-  Frontend: React, React Router
+## 📑 Table of Contents
 
-  Styling: Tailwind CSS
+- [Overview](#overview)
+- [Why ChronoCapsule?](#why-chronocapsule)
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Project Structure](#project-structure)
+- [Future Enhancements](#future-enhancements)
+- [License](#license)
 
-  Backend Services: Firebase (Authentication, Firestore Database)
+---
 
-  Media Storage: Cloudinary
-  
-  Deployment: Vercel
+## 📖 Overview
 
-##Setup and Installation
+ChronoCapsule is a multimedia-rich web application where users can create digital time capsules that unlock at a specified future date. Each capsule can include text, images, and other media, making it perfect for personal memories, collaborative storytelling, or long-term messages to loved ones.
 
-  To get a local copy up and running, follow these steps.
+---
 
-  git clone
-  First, clone the repository from GitHub to your local machine:
+## ❓ Why ChronoCapsule?
 
-  git clone https://github.com/GuptaAkshat23/ChronoCapsule.git
-  cd ChronoCapsule
+This project demonstrates how to build a modern, interactive full-stack application with real-time features and secure authentication. It focuses on:
 
-  npm install
+- Seamless user experience
+- Secure data handling
+- Scalable cloud-based architecture
 
-Next, install the necessary project dependencies:
+---
 
- npm install
+## ✨ Features
 
-##Set up Environment Variables
-  Before running the app, you must provide your own API keys.
+- 🔐 **Secure Authentication**  
+  User registration, login, and protected routes using Firebase Authentication.
 
-  Create a file named .env.local in the root of your project.
+- 📸 **Media Uploads**  
+  Upload and manage images and media via Cloudinary integration.
 
-  Add your Firebase and Cloudinary configuration details to this file.
+- 🔄 **Real-Time Data**  
+  Firebase enables real-time updates for capsule creation and sharing.
 
-  REACT_APP_FIREBASE_API_KEY="YOUR_API_KEY"
-  REACT_APP_FIREBASE_AUTH_DOMAIN="YOUR_AUTH_DOMAIN"
-  REACT_APP_FIREBASE_PROJECT_ID="YOUR_PROJECT_ID"
-  REACT_APP_FIREBASE_STORAGE_BUCKET="YOUR_STORAGE_BUCKET"
-  REACT_APP_FIREBASE_MESSAGING_SENDER_ID="YOUR_SENDER_ID"
-  REACT_APP_FIREBASE_APP_ID="YOUR_APP_ID"
+- 🌗 **Theme Toggling**  
+  Dynamic light/dark mode for a personalized user experience.
 
-##Available Scripts
-  In the project directory, you can run:
+- 📦 **Capsule Management**  
+  Create, view, organize, and share digital time capsules with metadata and collaborators.
 
-  npm start
-  Runs the app in the development mode.
+---
 
-  Open http://localhost:3000 to view it in your browser.
-  
-  The page will reload when you make changes.
+## 🚀 Getting Started
 
-  You may also see any lint errors in the console.
+Follow these instructions to set up the project locally.
 
-  npm test
-  
-  Launches the test runner in the interactive watch mode.
+### ✅ Prerequisites
 
-  See the section about running tests for more information.
+Make sure you have the following installed:
 
-  npm run build
-  Builds the app for production to the build folder.
+- **JavaScript (ES6+)**
+- **Node.js**
+- **npm**
 
-  It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-  The build is minified and the filenames include the hashes.
-  
-  Your app is ready to be deployed!
-  
-  See the section about deployment for more information.
+### 📥 Installation
 
-##Deployment
-  This application is configured for seamless deployment on Vercel.
-
-  The deployment process is automated through a CI/CD pipeline linked to the main branch of the GitHub repository. Any push to the main branch will automatically trigger a new build and deployment.
-
-  For manual deployment, you can run npm run build and upload the contents of the build folder to any static site hosting service.
-
-Learn More
-You can learn more in the Create React App documentation.
-
-To learn React, check out the React documentation.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/ChronoCapsule.git
